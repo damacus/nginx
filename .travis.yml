@@ -1,5 +1,5 @@
 language: ruby
-bundler_args: --without kitchen_vagrant
+bundler_args: --without development kitchen_docker kitchen_vagrant
 rvm:
 - 2.1.0
 before_install:
@@ -10,7 +10,7 @@ before_install:
 script:
 - bundle exec rake style
 - bundle exec rake spec
-- bundle exec kitchen test $KITCHEN_INSTANCE
+# - bundle exec kitchen test $KITCHEN_INSTANCE
 after_script:
 - bundle exec kitchen destroy
 env:
